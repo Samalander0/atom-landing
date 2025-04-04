@@ -1,0 +1,49 @@
+@import './mixins.scss';
+
+.landing-main {
+  background: #0a0a0a; // Neutral 950
+  color: #0a0a0a;
+
+  min-height: 100vh;
+  min-height: 100svh; // If browser supports svh, use that instead https://caniuse.com/viewport-unit-variants
+
+  @include flex-center;
+}
+
+.main-content {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/background.svg');
+  background-size: cover;
+  background-position: center;
+
+  pointer-events: none; // Disables interaction with the background so that you can interact with the three.js scene behind it
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 4rem 6rem;
+
+  @media (max-width: 1000px) {
+    padding: 2rem 3rem;
+  }
+
+  .text {
+    h1 {
+      margin: 0;
+      font-weight: 450;
+      letter-spacing: -0.03em;
+      font-size: 1.5rem;
+      
+      
+      @media (max-width: 600px) {
+        font-size: 1rem;
+      }
+    }
+    pointer-events: all; // Enables interaction with the text (because we disabled it for the parent, we have to re-enable it for the text)
+
+    max-width: 20rem;
+    text-transform: uppercase;
+  }
+}

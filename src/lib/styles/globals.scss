@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Geist Mono'; // https://vercel.com/font
+  src: url('GeistMono[wght].ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Geist Mono', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: black;
+  color: white;
+}
